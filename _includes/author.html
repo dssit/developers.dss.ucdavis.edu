@@ -1,0 +1,22 @@
+{% capture author_info %}
+{% assign author = site.authors[page.author] %}
+<div class="author">
+  {% if page.author %}
+  <a href="https://github.com/{{ author.github }}">
+    <img 
+      src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=60"
+      alt="{{ author.name }}" width="60" height="60" />
+  </a>
+  {% endif %}
+  <h5 class="upper-case">Author</h4>
+  <h6>
+    <a href="https://github.com/{{ author.github }}">
+      {{ author.name }}
+    </a>
+  </h5>
+</div>
+{% endcapture %}
+
+{% if page.author %}
+  {{ author_info | strip_newlines }}
+{% endif %}

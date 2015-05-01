@@ -1,0 +1,81 @@
+# Site settings
+title: UC Davis DSS Developers
+tagline: 
+email: dss-developers@ucdavis.edu
+description: > # this means to ignore newlines until "baseurl:"
+
+baseurl: "/web" # the subpath of your site, e.g. /blog/
+url: "https://dssit.github.io" # the base hostname & protocol for your site
+logourl: # Site logo
+author: "UC Davis DSS Developers"
+author_thumbnail: "/assets/images/avatar.png" # Author avatar
+# Theme customization - please change from the defaults!
+theme:
+  # Color for sidebar bar, links, etc
+  highlight_color: "#205081" #205081" # "#272935"
+  # Social media links, leave blank to ignore
+  social: 
+    github: dssit
+    # twitter: gayanvirajith
+    # facebook: gayanvirajith
+    # gplus: +gayanvirajith
+    # dribble: gayanvirajith
+    # pinterest: gayanvirajith
+
+  # Enable share buttons on post footer
+  show_share_buttons: true
+
+  # Show author picure, name and social links on post footer
+  show_author_info: true
+
+  # Disqus comments manager - shortname
+  # disqus_shortname: gaya-webcreate
+
+  # Google Analytics/Webmaster key, leave blank to ignore
+  google_analytics_key: 
+  google_webmaster_key: 
+
+# Build settings
+markdown: kramdown
+
+# Permalinks
+permalink:        pretty
+
+# Pagination config
+paginate: 5
+
+# Files/Folders to be excluded from generated _site folder
+exclude: 
+  - CNAME
+  - Gemfile
+  - Rakefile
+  - README.md
+  - .gitignore
+  - .sass-cache
+  - Gemfile.lock
+
+# Sass conversion configs
+sass:
+  sass_dir: assets/css/_sass
+  style: :compressed
+
+# Authors
+authors:
+  chris:
+    name: Christopher Thielen
+    title: Lead Application Developer
+    email: cmthielen@ucdavis.edu
+    gravatar: 8ea57ba8c2719423bfc1e55fc26aed76
+    github: cthielen
+  obada:
+    name: Obada Kadri
+    title: Application Developer
+    email: okadri@ucdavis.edu
+    gravatar: 19daa0ab1fb06a4e9d3bdbabe847fddc
+    github: okadri
+  lloyd:
+    name: Lloyd Wheeler
+    title: Application Developer
+    email: ltwheeler@ucdavis.edu
+    gravatar: d02c8a25e9080a07a4b52a6a11532dad
+    github: ltwheeler
