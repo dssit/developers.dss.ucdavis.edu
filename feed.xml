@@ -3,10 +3,10 @@
   <channel>
     <title>UC Davis DSS Developers</title>
     <description></description>
-    <link>https://dssit.github.io/web//</link>
-    <atom:link href="https://dssit.github.io/web//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Apr 2015 23:22:37 -0700</pubDate>
-    <lastBuildDate>Thu, 30 Apr 2015 23:22:37 -0700</lastBuildDate>
+    <link>https://dssit.github.io/web/</link>
+    <atom:link href="https://dssit.github.io/web/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 02 May 2015 10:32:44 -0700</pubDate>
+    <lastBuildDate>Sat, 02 May 2015 10:32:44 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -27,8 +27,8 @@
 
 </description>
         <pubDate>Wed, 31 Dec 2014 16:00:55 -0800</pubDate>
-        <link>https://dssit.github.io/web//jekyll/update/2014/12/31/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//jekyll/update/2014/12/31/welcome-to-jekyll/</guid>
+        <link>https://dssit.github.io/web/jekyll/update/2014/12/31/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/jekyll/update/2014/12/31/welcome-to-jekyll/</guid>
         
         
         <category>jekyll</category>
@@ -134,8 +134,8 @@
 &lt;p&gt;For more markdown features please look on &lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot;&gt;markdown styles&lt;/a&gt;. &lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Dec 2014 03:15:02 -0800</pubDate>
-        <link>https://dssit.github.io/web//sample-post</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//sample-post</guid>
+        <link>https://dssit.github.io/web/sample-post</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/sample-post</guid>
         
         
         <category>sample</category>
@@ -207,8 +207,8 @@
 &lt;p&gt;Happy jekylling!&lt;/p&gt;
 </description>
         <pubDate>Sat, 20 Dec 2014 17:08:49 -0800</pubDate>
-        <link>https://dssit.github.io/web//theme/guides/2014/12/20/gaya-jekyll-theme/</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//theme/guides/2014/12/20/gaya-jekyll-theme/</guid>
+        <link>https://dssit.github.io/web/theme/guides/2014/12/20/gaya-jekyll-theme/</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/theme/guides/2014/12/20/gaya-jekyll-theme/</guid>
         
         
         <category>theme</category>
@@ -233,8 +233,8 @@
 
 </description>
         <pubDate>Sat, 20 Dec 2014 17:08:49 -0800</pubDate>
-        <link>https://dssit.github.io/web//2014/12/20/Band-aid-30/</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//2014/12/20/Band-aid-30/</guid>
+        <link>https://dssit.github.io/web/2014/12/20/Band-aid-30/</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/2014/12/20/Band-aid-30/</guid>
         
         
       </item>
@@ -275,8 +275,8 @@ node program from the command line:&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 13 Dec 2014 20:07:49 -0800</pubDate>
-        <link>https://dssit.github.io/web//nodejs/guides/2014/12/13/what-is-nodejs/</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//nodejs/guides/2014/12/13/what-is-nodejs/</guid>
+        <link>https://dssit.github.io/web/nodejs/guides/2014/12/13/what-is-nodejs/</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/nodejs/guides/2014/12/13/what-is-nodejs/</guid>
         
         
         <category>nodejs</category>
@@ -347,8 +347,8 @@ new port number every time you want to connect to your system via SSH. &lt;/p&gt
 
 </description>
         <pubDate>Mon, 17 Nov 2014 00:00:00 -0800</pubDate>
-        <link>https://dssit.github.io/web//enable-ssh-secure-shell-in-ubuntu</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//enable-ssh-secure-shell-in-ubuntu</guid>
+        <link>https://dssit.github.io/web/enable-ssh-secure-shell-in-ubuntu</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/enable-ssh-secure-shell-in-ubuntu</guid>
         
         
         <category>ubuntu</category>
@@ -456,8 +456,8 @@ all done!&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 31 Oct 2014 00:00:00 -0700</pubDate>
-        <link>https://dssit.github.io/web//update-magento-url-after-migrate-site-from-one-environment-to-another</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//update-magento-url-after-migrate-site-from-one-environment-to-another</guid>
+        <link>https://dssit.github.io/web/update-magento-url-after-migrate-site-from-one-environment-to-another</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/update-magento-url-after-migrate-site-from-one-environment-to-another</guid>
         
         
         <category>magento</category>
@@ -582,8 +582,8 @@ gedit /var/www/info.php
 &lt;p&gt;Hope this is useful to you. &lt;/p&gt;
 </description>
         <pubDate>Sun, 29 Jun 2014 00:00:00 -0700</pubDate>
-        <link>https://dssit.github.io/web//installing-apache2-php5-and-mysql-support-on-ubuntu-12-04</link>
-        <guid isPermaLink="true">https://dssit.github.io/web//installing-apache2-php5-and-mysql-support-on-ubuntu-12-04</guid>
+        <link>https://dssit.github.io/web/installing-apache2-php5-and-mysql-support-on-ubuntu-12-04</link>
+        <guid isPermaLink="true">https://dssit.github.io/web/installing-apache2-php5-and-mysql-support-on-ubuntu-12-04</guid>
         
         
         <category>ubuntu</category>
