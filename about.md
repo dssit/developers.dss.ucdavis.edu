@@ -12,22 +12,24 @@ Our team is composed of three members:
 
 <div>
 {% for author in site.authors %}
-	<div class="author-info">
-	<div class="person">
-	  <a href="https://github.com/{{ author[1].github }}">
-	    <img 
-	      src="http://www.gravatar.com/avatar/{{ author[1].gravatar }}?s=100"
-	      alt="{{ author[1].name }}" width="100" height="100" class="img-circle" />
-	  </a>
-	  <h5>
-	    <a href="https://github.com/{{ author[1].github }}">
-	      {{ author[1].name }}
-	    </a>
-	  </h5>
-	  <h6>{{ author[1].title }}</h6>
-	  <h6>{{ author[1].email }}</h6>
-	</div>
-	</div>
+  <div class="person-info">
+  <div class="person">
+    <a href="https://github.com/{{ author[1].github }}">
+      <img 
+        src="http://www.gravatar.com/avatar/{{ author[1].gravatar }}?s=100"
+        alt="{{ author[1].name }}" width="100" height="100" class="img-circle" />
+    </a>
+    <div class="person-desc">
+      <h5>
+        <a href="https://github.com/{{ author[1].github }}">
+          {{ author[1].name }}
+        </a>
+      </h5>
+      <h6>{{ author[1].title }}</h6>
+      <h6>{{ author[1].email }}</h6>
+    </div>
+  </div>
+  </div>
 {% endfor %}
 </div>
 ---

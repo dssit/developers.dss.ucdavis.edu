@@ -24,6 +24,7 @@ theme:
 
   # Enable share buttons on post footer
   show_share_buttons: true
+  show_related_posts: false
 
   # Show author picure, name and social links on post footer
   show_author_info: true

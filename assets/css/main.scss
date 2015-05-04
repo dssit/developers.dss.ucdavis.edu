@@ -668,6 +668,10 @@ img {
   overflow: hidden;
 }
 
+.person-info .person-desc {
+  margin-top: 1.8em; 
+}
+
 .person {
   border-top: 1px solid $gray-lighter;
   @include column(2);
@@ -688,7 +692,7 @@ img {
 }
 
 .author, .person, .share-buttons { 
-  h5, h6 { margin: 1em 0; }
+  h5, h6 { margin: 0.5em 0; }
   h5.upper-case { text-transform: uppercase; color: $gray-darker; }
   p { @include font-size(14px); }
   img { float:left; margin-right: 1em; }
