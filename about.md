@@ -6,7 +6,7 @@ banner_image: bowtux.jpg
 banner_image_alt: About us
 ---
 
-The development team was established in 2013 as part of the the [Devision of Social Sciences IT][dssit] service center. Our vision is to provide quality applications and tools for the academic personnel, in order to streamline their work process and imrove work flow using secure and stable development framewroks.
+The development team was established in 2013 as part of the the [Devision of Social Sciences IT][dssit] service center. Our vision is to provide quality applications and tools for the academic personnel, in order to streamline their work process and improve workflow using secure and stable development frameworks.
 
 Our team is composed of three members:
 
@@ -15,7 +15,7 @@ Our team is composed of three members:
   <div class="person-info">
   <div class="person">
     <a href="https://github.com/{{ author[1].github }}">
-      <img 
+      <img
         src="http://www.gravatar.com/avatar/{{ author[1].gravatar }}?s=100"
         alt="{{ author[1].name }}" width="100" height="100" class="img-circle" />
     </a>
