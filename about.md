@@ -6,7 +6,7 @@ banner_image: bowtux.jpg
 banner_image_alt: About us
 ---
 
-The development team was established in 2013 as part of the the [Devision of Social Sciences IT][dssit] service center. Our vision is to provide quality applications and tools for the academic personnel, in order to streamline their work process and improve workflow using secure and stable development frameworks.
+Our development team was established in 2012 as part of the the [Devision of Social Sciences IT Service Center][dssit]. We are tasked with providing quality software tools for our academic personnel to better streamline their business processes using secure and modern development techniques.
 
 Our team is composed of three members:
 
