@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->  
+  <head>
+    <title></title>
+
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manipulating Active Directory with Ruby - UC Davis DSS Developers</title>
+    <meta name="description" content="">
+    <meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="Manipulating Active Directory with Ruby - UC Davis DSS Developers"><meta property="og:site_name" content="UC Davis DSS Developers"><meta property="og:description" content=""><meta property="og:url" content="http://developers.dss.ucdavis.edu/manipulating-active-directory-with-ruby"><meta property="article:published_time" content="2015-06-04T00:00:00-07:00"><meta property="article:author" content="http://developers.dss.ucdavis.edu/about">
+  
+    
+
+    
+
+    <link rel="alternate" type="application/rss+xml" href="http://developers.dss.ucdavis.edu/feed.xml">
+    <link rel="shortcut icon" href="http://developers.dss.ucdavis.edu/favicon.ico">
+    <link rel="prefetch" href="http://developers.dss.ucdavis.edu">
+    <link rel="canonical" href="http://developers.dss.ucdavis.edu/manipulating-active-directory-with-ruby">
+    <link rel="stylesheet" 
+    href="http://developers.dss.ucdavis.edu/assets/css/main.css">
+
+    <!-- IE Fixes -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">a,.post-title a{color:#205081}a:hover{border-bottom-color:#205081}.sidebar{background-color:#205081}.wc-top,.sidebar-toggle:active,#sidebar-checkbox:checked ~ .sidebar-toggle{background-color:#205081}.sidebar a:hover,.sidebar .sidebar-nav a{border-bottom-color:#255d95}.sidebar .sidebar-nav{border-top-color:#255d95}.sidebar .sidebar-nav a.sidebar-nav-item:hover,.sidebar .sidebar-nav a.sidebar-nav-item:focus{background:#23588d}.sidebar .sidebar-nav .sidebar-nav-item.active{background-color:#1d4875}ul.social-media li>a{background-color:#1d4875;border-color:#255d95;border-bottom-color:#255d95 !important}ul.social-media li>a:hover{background-color:#b4d0ec}.btn{border-color:#205081;background:#205081}.btn:hover,.btn:focus{border-color:#1b436d;background:#1b436d}</style>
+  </head>
+  <body>
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><div class="sidebar" id="sidebar">    <img     src="http://developers.dss.ucdavis.edu/assets/images/avatar.png"    alt="UC Davis DSS Developers" />    <div class="sidebar-info">      <p>              </p>  </div>  <nav class="sidebar-nav">    <a class="sidebar-nav-item"       href="http://developers.dss.ucdavis.edu/">       Home    </a>                        <a class="sidebar-nav-item "       href="http://developers.dss.ucdavis.edu/about">      About    </a>                        <a class="sidebar-nav-item "       href="http://developers.dss.ucdavis.edu/projects">      Projects    </a>                        <a class="sidebar-nav-item "       href="http://developers.dss.ucdavis.edu/contact">      Contact    </a>                        <a class="sidebar-nav-item "       href="http://developers.dss.ucdavis.edu/archive">      Blog Archive    </a>    <!--     <a class="sidebar-nav-item"       href="http://github.com/dssit"      target="_blank">      GitHub/Download    </a> -->  </nav>  <div class="sidebar-info small">     <p>       Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>     </p>  </div>  <ul class="social-media">                    <li>        <a title="dssit on Github"             href="https://github.com/dssit"             class="github wc-img-replace" target="_blank">Github</a>    </li>                 <li>        <a title="Subscribe via RSS"             href="http://developers.dss.ucdavis.edu/feed.xml"            class="rss wc-img-replace" target="_blank">            RSS        </a>    </li></ul></div>
+    <div class="main-wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="header-logo"></div>
+          <div class="header-title">
+            <a href="http://developers.dss.ucdavis.edu/" 
+              title="UC Davis DSS Developers"> 
+              <h3>UC Davis DSS Developers<small></small></h3>
+            </a>
+          </div>        
+        </div>  
+      </div>
+      
+      <div class="container content">
+          <div class="post">
+
+  
+
+  
+
+  <header class="post-header">
+    <h1 class="post-title">Manipulating Active Directory with Ruby</h1>
+    <p class="post-meta">
+    
+      <span class="categories">
+      ruby, active-directory, and ldap
+      </span> |
+    
+    <span class="post-date">
+    Jun 4, 2015 •   
+    </span>
+    </p>
+  </header>
+
+  <article class="post-content">
+    <p>Ruby and Active Directory may be worlds apart but can play nice together thanks
+to Active Directory’s LDAP underpinnings.</p>
+
+<hr />
+
+<h3 id="active-directory-is-ldap">Active Directory is LDAP</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Active_Directory">Active Directory</a> is a popular solution for managing authentication, authorization, and directory listings in computer networks. It is built on top of LDAP version 2 and 3 and a Microsoft variant of Kerberos and DNS.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol">LDAP</a> is an open protocol designed for very fast reading. Data within LDAP is organized into a tree-like structure and queries are generally made against a specified subtree.</p>
+
+<h3 id="ruby-speaks-ldap-well">Ruby Speaks LDAP Well</h3>
+
+<p><a href="https://github.com/ruby-ldap/ruby-net-ldap">net-ldap</a> is a well-established Ruby gem for communicating with LDAP servers.</p>
+
+<p>Let’s jump right in and search for a user in Active Directory.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;net-ldap&#39;</span>
+
+  <span class="c1"># Describe server&#39;s address and provide authentication</span>
+  <span class="n">server</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="ss">:host</span> <span class="o">=&gt;</span> <span class="s1">&#39;ldap.example.com&#39;</span><span class="p">,</span>
+    <span class="ss">:base</span> <span class="o">=&gt;</span> <span class="s1">&#39;ou=People,dc=ldap,dc=example,dc=com&#39;</span><span class="p">,</span>
+    <span class="ss">:port</span> <span class="o">=&gt;</span> <span class="mi">636</span><span class="p">,</span>
+    <span class="ss">:encryption</span> <span class="o">=&gt;</span> <span class="ss">:simple_tls</span><span class="p">,</span>
+    <span class="ss">:auth</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:simple</span><span class="p">,</span>
+      <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s1">&#39;somebody&#39;</span><span class="p">,</span>
+      <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">&#39;something&#39;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1"># &#39;Binding&#39; is LDAP vernacular for &#39;connecting&#39;</span>
+  <span class="n">conn</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">LDAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+  <span class="n">conn</span><span class="o">.</span><span class="n">bind</span>
+
+  <span class="n">results</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="no">Net</span><span class="o">::</span><span class="no">LDAP</span><span class="o">::</span><span class="no">Filter</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;sAMAccountName&quot;</span><span class="p">,</span> <span class="s1">&#39;a_loginid&#39;</span><span class="p">))</span>
+
+  <span class="k">raise</span> <span class="s2">&quot;LDAP error. Code: </span><span class="si">#{</span><span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="si">}</span><span class="s2">, Reason: </span><span class="si">#{</span><span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">unless</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="mi">0</span>
+
+  <span class="k">raise</span> <span class="s2">&quot;No users found or too many users found.&quot;</span> <span class="k">unless</span> <span class="n">results</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span>
+
+  <span class="n">user</span> <span class="o">=</span> <span class="n">results</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+
+  <span class="c1"># Print their display name (typically their full name)</span>
+  <span class="nb">puts</span> <span class="n">user</span><span class="o">[</span><span class="ss">:displayname</span><span class="o">]</span>
+
+  <span class="c1"># Print their user creation date</span>
+  <span class="nb">puts</span> <span class="n">user</span><span class="o">[</span><span class="ss">:whencreated</span><span class="o">]</span>
+
+  <span class="c1"># Print their street address</span>
+  <span class="nb">puts</span> <span class="n">user</span><span class="o">[</span><span class="ss">:streetaddress</span><span class="o">]</span></code></pre></div>
+
+<p>If you poke around the <em>user</em> object you’ll find quite a bit of information, a lot of it you may not need.</p>
+
+<p>What about groups?</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Assuming we&#39;ve binded &#39;conn&#39; already in the example above ...</span>
+
+  <span class="n">results</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="no">Net</span><span class="o">::</span><span class="no">LDAP</span><span class="o">::</span><span class="no">Filter</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;cn&quot;</span><span class="p">,</span> <span class="s1">&#39;group_name&#39;</span><span class="p">))</span>
+
+  <span class="k">raise</span> <span class="s2">&quot;LDAP error. Code: </span><span class="si">#{</span><span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="si">}</span><span class="s2">, Reason: </span><span class="si">#{</span><span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">unless</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="mi">0</span>
+
+  <span class="k">raise</span> <span class="s2">&quot;No groups found or too many groups found.&quot;</span> <span class="k">unless</span> <span class="n">results</span><span class="o">.</span><span class="n">length</span> <span class="o">==</span> <span class="mi">1</span>
+
+  <span class="n">group</span> <span class="o">=</span> <span class="n">results</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+
+  <span class="c1"># Print the group&#39;s name</span>
+  <span class="nb">puts</span> <span class="n">group</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>
+
+  <span class="c1"># Print the group&#39;s members</span>
+  <span class="nb">puts</span> <span class="n">group</span><span class="o">[</span><span class="ss">:member</span><span class="o">]</span>
+
+  <span class="c1"># Count the group&#39;s members</span>
+  <span class="nb">puts</span> <span class="n">group</span><span class="o">[</span><span class="ss">:member</span><span class="o">].</span><span class="n">length</span></code></pre></div>
+
+<p>It’s pretty straightforward once you know the layout of your Active Directory trees and what each object looks like.</p>
+
+<p>How about adding a user to a group?</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Assuming &#39;user&#39; and &#39;group&#39; are objects we already fetched from Active Directory ...</span>
+
+  <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span><span class="ss">:dn</span> <span class="o">=&gt;</span> <span class="n">group</span><span class="o">[</span><span class="ss">:distinguishedname</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span>
+    <span class="ss">:operations</span> <span class="o">=&gt;</span> <span class="o">[</span> <span class="o">[</span> <span class="ss">:add</span><span class="p">,</span> <span class="ss">:member</span><span class="p">,</span> <span class="n">user</span><span class="o">[</span><span class="ss">:distinguishedname</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">]</span> <span class="o">]</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="no">LDAP_ALREADY_EXISTS</span>
+    <span class="nb">puts</span> <span class="s2">&quot;User already in group.&quot;</span>
+  <span class="k">elsif</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="k">raise</span> <span class="s2">&quot;LDAP error. Code: </span><span class="si">#{</span><span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">code</span> <span class="si">}</span><span class="s2">, Reason: </span><span class="si">#{</span><span class="n">conn</span><span class="o">.</span><span class="n">get_operation_result</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">else</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="kp">true</span>
+      <span class="nb">puts</span> <span class="s2">&quot;User added to group.&quot;</span>
+    <span class="k">else</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Something went wrong.&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span></code></pre></div>
+
+<p>There exists an <a href="https://github.com/Mazwak/active_directory">active-directory gem</a> to provide a more attractive and abstract experience when dealing with Active Directory if you prefer. At the time of this writing it does not support reading/writing users and groups from multiple, connected Active Directory servers so the above LDAP methods may prove useful to programmers in that scenario.</p>
+    
+  </article>
+
+  
+
+  <div class="author-info">
+    
+      
+
+
+  <div class="author">    <a href="https://github.com/">    <img class="img-circle"      src="http://www.gravatar.com/avatar/?s=60"      alt="" width="60" height="60" />  </a>    <h5 class="upper-case">Author</h4>  <h6>    <a href="https://github.com/">          </a>  </h5></div>
+
+
+    
+  
+    
+      <div class="share-buttons">  <h5>Share this post on</h5>  <ul class="social-media">    <li>        <a title=" on Twitter"           href="https://twitter.com/intent/tweet?original_referer=http://developers.dss.ucdavis.edu/manipulating-active-directory-with-ruby&amp;text=Manipulating Active Directory with Ruby&amp;url=http://developers.dss.ucdavis.edu/manipulating-active-directory-with-ruby" class="twitter wc-img-replace" target="_blank">          Twitter        </a>    </li>       <li>        <a title=" on Google Plus"             href="https://plus.google.com/share?url=http://developers.dss.ucdavis.edu/manipulating-active-directory-with-ruby"             class="google wc-img-replace" target="_blank">Google</a>    </li>    <li>        <a title=" on Facebook"             href="https://www.facebook.com/sharer/sharer.php?u=http://developers.dss.ucdavis.edu/manipulating-active-directory-with-ruby&amp;t=Manipulating Active Directory with Ruby"             class="facebook wc-img-replace" target="_blank">Facebook</a>    </li>  </ul></div>
+      
+  </div>
+  
+  
+</div>
+
+      </div>
+      <a href="#0" class="wc-top">Top</a>
+      
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle">
+      <span></span>
+    </label>
+
+    <script type="text/javascript">
+      var config = {
+        "browser_warning_page": "http://developers.dss.ucdavis.edu/browser-warning/",
+        "disqus_shortname": ""
+      };
+      /* Browser support detection */
+      var browserSupport = (function(){
+        var htmlElemClasses = document.querySelector('html').className.split(' ');
+        for ( var i = 0; i < htmlElemClasses.length; i += 1 ){
+          var className = htmlElemClasses[i];
+          if ( className === 'lt-ie9' ){
+            return true;
+          }
+        }
+      }());
+
+      if (browserSupport){
+        window.location="http://developers.dss.ucdavis.edu/browser-warning/";
+      }
+
+      /* To avoid render blocking css */
+      var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = 'http://fonts.googleapis.com/css?family=PT+Sans';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+
+
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script async type="text/javascript" src="http://developers.dss.ucdavis.edu/assets/js/gaya.min.js"></script>
+    
+    
+    
+<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-62588019-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+   
+  </body>
+</html>
